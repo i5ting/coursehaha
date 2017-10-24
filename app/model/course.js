@@ -28,7 +28,7 @@ var MongooseDao = require('mongoosedao')
 //   - 用户（多个）
 
 var courseSchema = new Schema({
-  name: String, //课程名称
+  name: { type: String, unique: true }, //课程名称
   category: String, //分类（/首页/人工智能/系统掌握深度学习）
   price: String, //价格
   picture: String, //头图
@@ -38,9 +38,9 @@ var courseSchema = new Schema({
   prompt: String, //课程提示： 课程原价 4999 元...
   target: String, //课程目标
   target_user: String, //适合人群
-  student_trend: String, //学员动态：（5条，xxx加入学习）
+  student_trend: Array, //学员动态：（5条，xxx加入学习）
   evaluation_count: Number, //当评价表增加新数据，异步更新
-  evaluation_average_number: String, //当评价表增加新数据，异步更新
+  evaluation_average_number: Number, //当评价表增加新数据，异步更新
   latest_students: Array, //最新学员（多个，最多20）
   toc: Array, //目录
   // notes: [{

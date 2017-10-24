@@ -43,22 +43,22 @@ var courseSchema = new Schema({
   evaluation_average_number: String, //当评价表增加新数据，异步更新
   latest_students: Array, //最新学员（多个，最多20）
   toc: Array, //目录
-  notes: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Note'
-  }], //笔记（多个）
-  evaluations: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Evaluation'
-  }], //评价（多个）
-  students: [{
-    type: Schema.Types.ObjectId,
-    ref: 'User'
-  }], //学生（多个）
-  teachers: [{
-    type: Schema.Types.ObjectId,
-    ref: 'User'
-  }]//授课教师（多个）
+  // notes: [{
+  //   type: Schema.Types.ObjectId,
+  //   ref: 'Note'
+  // }], //笔记（多个）
+  // evaluations: [{
+  //   type: Schema.Types.ObjectId,
+  //   ref: 'Evaluation'
+  // }], //评价（多个）
+  // students: [{
+  //   type: Schema.Types.ObjectId,
+  //   ref: 'User'
+  // }], //学生（多个）
+  // teachers: [{
+  //   type: Schema.Types.ObjectId,
+  //   ref: 'User'
+  // }]//授课教师（多个）
 })
 
 var course = mongoose.model('Course', courseSchema)

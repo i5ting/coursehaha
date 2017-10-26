@@ -1,30 +1,17 @@
 {
   "name": "coursehaha",
-  "version": "1.0.0",
-  "description": "## 目录",
-  "main": "index.js",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "./node_modules/.bin/mocha -u bdd"
+    "start": "node ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/i5ting/coursehaha.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/i5ting/coursehaha/issues"
-  },
-  "homepage": "https://github.com/i5ting/coursehaha#readme",
   "dependencies": {
-    "bluebird": "^3.5.1",
-    "mongoose": "^4.12.4",
-    "mongoose-auto-increment": "^5.0.1",
-    "mongoosedao": "^1.0.13"
-  },
-  "devDependencies": {
-    "chai": "^4.1.2",
-    "mocha": "^4.0.1"
+    "body-parser": "~1.18.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.15.5",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.0",
+    "serve-favicon": "~2.4.5"
   }
 }

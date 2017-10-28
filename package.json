@@ -6,10 +6,12 @@
     "start": "./node_modules/.bin/nodemon app.js"
   },
   "dependencies": {
+    "art-template": "^4.12.2",
     "body-parser": "~1.18.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.15.5",
+    "express-art-template": "^1.0.0",
     "jade": "~1.11.0",
     "mongoose": "^4.12.4",
     "mongoosedao": "^1.0.13",

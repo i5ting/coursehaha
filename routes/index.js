@@ -44,7 +44,7 @@ router.get('/static/list', function (req, res, next) {
   })
 });
 
-
+/* GET course detail page. */
 router.get('/courses/:id', function (req, res, next) {
   var cid = req.params.id
   Course.getById(cid, function (err, course) {

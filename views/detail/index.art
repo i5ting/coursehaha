@@ -1,7 +1,7 @@
 <script type="text/html" id="tpl_home">
     <style>
         body {
-            background: #f5f8fa;
+            background-color: #D8D8D8;
             word-wrap: break-word;
             text-rendering: optimizeLegibility;
             -webkit-font-smoothing: antialiased;
@@ -12,126 +12,135 @@
             font-size: 14px;
         }
 
-        .course_list {
-            width: 100%;
-            display: block;
-            /* margin: 2%; */
-        }
-
-        .course_item {
-            float: left;
-            width: 48%;
-            height: 158px;
-            display: block;
-            margin-left: 1%;
-            margin-bottom: 10px;
-            /* background: red; */
+        .m_panel {
             border-radius: 4px;
             border: 1px solid #e4ecf3;
+            margin: 15px;
         }
 
-        .course-list .course-item {
-            margin-bottom: 20px;
-            margin-left: -5px;
-            margin-right: -5px;
+        .weui-panel__hd h2 {
+            color: black;
         }
 
-        .course-list .course-item {
-            position: relative;
-            z-index: 1;
-            margin-bottom: 30px;
-            border-radius: 4px;
-            border: 1px solid #e4ecf3;
-            background-color: #fff;
+        .weui-panel__hd:after {
+            height: 0px;
+            border-bottom: 0px solid #E5E5E5;
+            right: 15px;
         }
 
-        .course-img {
-            position: relative;
-            overflow: hidden;
-            border-top-left-radius: 4px;
-            border-top-right-radius: 4px;
-        }
-
-        .course-img img {
-            display: block;
-            max-width: 100%;
-            height: auto;
-            vertical-align: middle;
-            border: 0;
-        }
-
-        .title {
+        .image-overlay {
+            /* position: absolute; */
+            top: 0px;
+            right: 0;
+            bottom: 0;
+            left: 0;
             width: 100%;
-            display: block;
-            overflow: hidden;
-            margin-top: 10px;
-            padding: 0 3px;
-            display: block;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            word-wrap: normal;
-        }
-
-        .link-dark {
-            cursor: pointer;
-            color: #616161!important;
-            transition: all .3s ease;
-        }
-
-        .metas {
-            padding: 0px;
-            position: relative;
-            color: #c1c1c1;
-        }
-
-        .metas .comment {
-            display: none;
-        }
-
-        .metas .comment {
-            margin-left: 10px;
-        }
-
-        .course-price-widget {
-            float: right;
+            height: 100%;
+            margin-top: -10px;
+            /* border-radius: 4px; */
+            /* transition: all .3s ease; */
         }
 
         .price {
-            color: #ed3e3e;
-            font-size: 14px;
-            margin-right: 2px;
+            padding: 0px 15px;
+        }
+
+        .info {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            width: 80%;
+            left: 5%;
+            right: 5%;
+            padding: 0px 15px;
+            border: 1px dashed red;
+            color: #fd5f56;
+            font-size: 10px;
+        }
+
+        .weui-panel__hd:after {
+            left: 0px
+        }
+
+        .panel_detail:after {
+            left: 0px
+        }
+
+        li {
+            width: 50px;
+            float: left;
+            /* height:20px; */
+        }
+
+        .buy-btn-group {
+            float: right;
+        
+            margin-top: 10px;
+            margin-right: 20px;
+            margin-bottom: 10px;
         }
     </style>
     <div class="page">
         <!-- {{$data}} -->
         <div class="page__hd">
-            <h2 class="">
-                StuQ《Node.js微信开发》
-            </h2>
-            <p class="">我们这次讲的课是《Node.js微信开发》，是StuQ推出的第一门课。</p>
+            <p class="">
+                {{$data.course.category}}
+            </p>
+
         </div>
         <div class="page__bd ">
-            <div class="weui-panel weui-panel_access">
-                <div class="weui-panel__hd">课程列表</div>
-                <div class="weui-panel__bd">
+            <div class="weui-panel weui-panel_access m_panel">
+                <div class="weui-panel__hd">
+                    <h2>{{$data.course.name}}</h2>
+                </div>
+                <div class="weui-panel__bd panel_detail">
                     <div class="page__bd course_list">
-                        {{each $data.courses}} 
-                            {{include './course_item.art' $value}} 
-                        {{/each}}
-                        {{if !$data.courses || $data.courses.length === 0}}
-                            <center> 一个课程都没有，怪我喽？。。。</center>
-                        {{/if}}
+                        <div class="weui-panel__hd">
+                            <img src="{{$data.course.picture}}" alt="{{$data.course.name}}" class="image-overlay">
+                        </div>
+
+                        <div class="weui-panel__hd price">
+                            <p> ￥{{$data.course.price}}.00 </p>
+                        </div>
+
+                        <div class="weui-panel__hd info">
+                            <center> {{$data.course.prompt}} </center>
+                        </div>
                     </div>
                 </div>
-                {{if $data.show_mode}}
                 <div class="weui-panel__ft">
-                    <a href="/list" class="weui-cell weui-cell_access weui-cell_link">
-                        <div class="weui-cell__bd">查看更多</div>
-                        <span class="weui-cell__ft"></span>
-                    </a>
+                    <div class="course-detail-section">
+                        <center>
+                            <a style='width:90%;' class="weui-btn weui-btn_mini weui-btn_primary" href="#modal" data-toggle="modal" data-url="/course/49/buy?targetType=course">
+                                购买课程
+                            </a>
+                        </center>
+                    </div>
                 </div>
-                {{/if}}
+            </div>
+
+
+            <div class="weui-panel weui-panel_access m_panel">
+                <div class="weui-panel__hd">
+                    <p>课程介绍</p>
+                </div>
+                <div class="weui-panel__bd panel_detail">
+                    <div class="page__bd course_list">
+    
+                        <div class="weui-panel__hd price">
+                                <b>课程目标：</b> <p>  {{$data.course.target}} </p>
+                        </div>
+                        
+                        <div class="weui-panel__hd price">
+                                <b>目标用户：<b>  <p> {{$data.course.target_user}} </p>
+                        </div>
+                        
+                        <div class="weui-panel__hd price">
+                            ...
+                            <br>
+                        </div>
+                    </div>
+                </div>
+              
             </div>
         </div>
         <div class="page__ft">

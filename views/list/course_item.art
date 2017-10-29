@@ -1,6 +1,6 @@
 <div class='course_item'>
     <div class="course-img">
-        <a href="/courses/{{_id+""}}" target="_self">
+        <a href="/courses/{{_id + ""}}" target="_self">
             <span class="tags">
                 <span class="tag-serialing"></span>
             </span>
@@ -9,7 +9,7 @@
     </div>
     <div class="course-info">
         <div class="title">
-            <a class="link-dark" href="/course/{{_id}}" target="_self">
+            <a class="link-dark" href="/course/{{_id  + ""}}" target="_self">
                 {{name}}
             </a>
         </div>

@@ -107,7 +107,7 @@
         <!-- {{$data}} -->
         <div class="page__hd">
             <h2 class="">
-                    StuQ《Node.js微信开发》
+                StuQ《Node.js微信开发》
             </h2>
             <p class="">我们这次讲的课是《Node.js微信开发》，是StuQ推出的第一门课。</p>
         </div>
@@ -116,17 +116,22 @@
                 <div class="weui-panel__hd">课程列表</div>
                 <div class="weui-panel__bd">
                     <div class="page__bd course_list">
-                        {{each $data.courses}}
-                            {{include './course_item.art' $value}}
+                        {{each $data.courses}} 
+                            {{include './course_item.art' $value}} 
                         {{/each}}
+                        {{if !$data.courses || $data.courses.length === 0}}
+                            <center> 一个课程都没有，怪我喽？。。。</center>
+                        {{/if}}
                     </div>
                 </div>
+                {{if $data.show_mode}}
                 <div class="weui-panel__ft">
                     <a href="/list" class="weui-cell weui-cell_access weui-cell_link">
                         <div class="weui-cell__bd">查看更多</div>
                         <span class="weui-cell__ft"></span>
                     </a>
                 </div>
+                {{/if}}
             </div>
         </div>
         <div class="page__ft">

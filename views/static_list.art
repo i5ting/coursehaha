@@ -9,6 +9,6 @@ block content
 <% extend('./layout_weui.art') %>
 <% block('content', function(){ %>
 
-  {{include './page/tpl_home.art' $data}}
+  {{include './tpl_static_home.art'}}
 
 <% }) %>

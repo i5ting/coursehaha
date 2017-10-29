@@ -14,4 +14,15 @@ router.get('/', function (req, res, next) {
   })
 });
 
+
+router.get('/static/list', function (req, res, next) {
+  Course.all(function (err, courses) {
+    console.log(courses)
+    res.render('static_list', { 
+      title: 'Express',
+      courses:courses
+    });
+  })
+});
+
 module.exports = router;

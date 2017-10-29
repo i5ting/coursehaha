@@ -104,6 +104,7 @@
         }
     </style>
     <div class="page">
+        <!-- {{$data}} -->
         <div class="page__hd">
             <h2 class="">
                     StuQ《Node.js微信开发》
@@ -115,126 +116,9 @@
                 <div class="weui-panel__hd">课程列表</div>
                 <div class="weui-panel__bd">
                     <div class="page__bd course_list">
-
-                        <div class='course_item'>
-                            <div class="course-img">
-                                <a href="/course/49" target="_blank">
-                                    <span class="tags">
-                                        <span class="tag-serialing"></span>
-                                    </span>
-                                    <img src="https://new.stuq.org/files/default/2017/08-08/120213522984724939.jpg" alt="系统掌握深度学习，从入门到精通实战" class="img-responsive">
-                                </a>
-                            </div>
-                            <div class="course-info">
-                                <div class="title">
-                                    <a class="link-dark" href="/course/49" target="_blank">
-                                        系统掌握深度学习，从入门到精通实战
-                                    </a>
-                                </div>
-                                <div class="metas clearfix">
-                                    <span class="comment">
-                                        <i class="es-icon es-icon-textsms"></i>0</span>
-
-                                    <span class="course-price-widget">
-                                        <span class="
-                                                                          price
-                                                        ">
-                                            2999元
-                                        </span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class='course_item'>
-                            <div class="course-img">
-                                <a href="/course/49" target="_blank">
-                                    <span class="tags">
-                                        <span class="tag-serialing"></span>
-                                    </span>
-                                    <img src="https://new.stuq.org/files/default/2017/08-08/120213522984724939.jpg" alt="系统掌握深度学习，从入门到精通实战" class="img-responsive">
-                                </a>
-                            </div>
-                            <div class="course-info">
-                                <div class="title">
-                                    <a class="link-dark" href="/course/49" target="_blank">
-                                        系统掌握深度学习，从入门到精通实战
-                                    </a>
-                                </div>
-                                <div class="metas clearfix">
-                                    <span class="comment">
-                                        <i class="es-icon es-icon-textsms"></i>0</span>
-
-                                    <span class="course-price-widget">
-                                        <span class="
-                                                                          price
-                                                        ">
-                                            2999元
-                                        </span>
-                                    </span>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class='course_item'>
-                            <div class="course-img">
-                                <a href="/course/49" target="_blank">
-                                    <span class="tags">
-                                        <span class="tag-serialing"></span>
-                                    </span>
-                                    <img src="https://new.stuq.org/files/default/2017/08-08/120213522984724939.jpg" alt="系统掌握深度学习，从入门到精通实战" class="img-responsive">
-                                </a>
-                            </div>
-                            <div class="course-info">
-                                <div class="title">
-                                    <a class="link-dark" href="/course/49" target="_blank">
-                                        系统掌握深度学习，从入门到精通实战
-                                    </a>
-                                </div>
-                                <div class="metas clearfix">
-                                    <span class="comment">
-                                        <i class="es-icon es-icon-textsms"></i>0</span>
-
-                                    <span class="course-price-widget">
-                                        <span class="
-                                                                          price
-                                                        ">
-                                            2999元
-                                        </span>
-                                    </span>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class='course_item'>
-                            <div class="course-img">
-                                <a href="/course/49" target="_blank">
-                                    <span class="tags">
-                                        <span class="tag-serialing"></span>
-                                    </span>
-                                    <img src="https://new.stuq.org/files/default/2017/08-08/120213522984724939.jpg" alt="系统掌握深度学习，从入门到精通实战" class="img-responsive">
-                                </a>
-                            </div>
-                            <div class="course-info">
-                                <div class="title">
-                                    <a class="link-dark" href="/course/49" target="_blank">
-                                        系统掌握深度学习，从入门到精通实战
-                                    </a>
-                                </div>
-                                <div class="metas clearfix">
-                                    <span class="comment">
-                                        <i class="es-icon es-icon-textsms"></i>0</span>
-
-                                    <span class="course-price-widget">
-                                        <span class="
-                                                                          price
-                                                        ">
-                                            2999元
-                                        </span>
-                                    </span>
-                                </div>
-                            </div>
-
-                        </div>
+                        {{each $data.courses}}
+                            {{include './course_item.art' $value}}
+                        {{/each}}
                     </div>
                 </div>
                 <div class="weui-panel__ft">

@@ -1,0 +1,186 @@
+<script type="text/html" id="tpl_home">
+    <style>
+        body {
+            background: #f5f8fa;
+            word-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            font-size: 14px;
+        }
+
+        .course_list {
+            width: 100%;
+            display: block;
+            /* margin: 2%; */
+        }
+
+        .course_item {
+            float: left;
+            width: 48%;
+            height: 158px;
+            display: block;
+            margin-left: 1%;
+            margin-bottom: 10px;
+            /* background: red; */
+            border-radius: 4px;
+            border: 1px solid #e4ecf3;
+        }
+
+        .course-list .course-item {
+            margin-bottom: 20px;
+            margin-left: -5px;
+            margin-right: -5px;
+        }
+
+        .course-list .course-item {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 30px;
+            border-radius: 4px;
+            border: 1px solid #e4ecf3;
+            background-color: #fff;
+        }
+
+        .course-img {
+            position: relative;
+            overflow: hidden;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+        }
+
+        .course-img img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            vertical-align: middle;
+            border: 0;
+        }
+
+        .title {
+            width: 100%;
+            display: block;
+            overflow: hidden;
+            margin-top: 10px;
+            padding: 0 3px;
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            word-wrap: normal;
+        }
+
+        .link-dark {
+            cursor: pointer;
+            color: #616161!important;
+            transition: all .3s ease;
+        }
+
+        .metas {
+            padding: 0px;
+            position: relative;
+            color: #c1c1c1;
+        }
+
+        .metas .comment {
+            display: none;
+        }
+
+        .metas .comment {
+            margin-left: 10px;
+        }
+
+        .course-price-widget {
+            float: right;
+        }
+
+        .price {
+            color: #ed3e3e;
+            font-size: 14px;
+            margin-right: 2px;
+        }
+    </style>
+    <div class="page">
+        <!-- {{$data}} -->
+        <div class="page__hd">
+            <h2 class="">
+                StuQ《Node.js微信开发》
+            </h2>
+            <p class="">我们这次讲的课是《Node.js微信开发》，是StuQ推出的第一门课。</p>
+        </div>
+        <div class="page__bd ">
+            <div class="weui-panel weui-panel_access">
+                <div class="weui-panel__hd">课程列表</div>
+                <div class="weui-panel__bd">
+                    <div class="page__bd course_list">
+                        {{each $data.courses}} 
+                            {{include './course_item.art' $value}} 
+                        {{/each}}
+                        {{if !$data.courses || $data.courses.length === 0}}
+                            <center> 一个课程都没有，怪我喽？。。。</center>
+                        {{/if}}
+                    </div>
+                </div>
+                {{if $data.show_mode}}
+                <div class="weui-panel__ft">
+                    <a href="/list" class="weui-cell weui-cell_access weui-cell_link">
+                        <div class="weui-cell__bd">查看更多</div>
+                        <span class="weui-cell__ft"></span>
+                    </a>
+                </div>
+                {{/if}}
+            </div>
+        </div>
+        <div class="page__ft">
+            <a href="http://StuQ.org" style='color: gray;'>
+                study at StuQ
+            </a>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                var winH = $(window).height();
+                var categorySpace = 10;
+
+                $('.js_item').on('click', function () {
+                    var id = $(this).data('id');
+                    window.pageManager.go(id);
+                });
+                $('.js_category').on('click', function () {
+                    var $this = $(this),
+                        $inner = $this.next('.js_categoryInner'),
+                        $page = $this.parents('.page'),
+                        $parent = $(this).parent('li');
+                    var innerH = $inner.data('height');
+                    bear = $page;
+
+                    if (!innerH) {
+                        $inner.css('height', 'auto');
+                        innerH = $inner.height();
+                        $inner.removeAttr('style');
+                        $inner.data('height', innerH);
+                    }
+
+                    if ($parent.hasClass('js_show')) {
+                        $parent.removeClass('js_show');
+                    } else {
+                        $parent.siblings().removeClass('js_show');
+
+                        $parent.addClass('js_show');
+                        if (this.offsetTop + this.offsetHeight + innerH > $page.scrollTop() + winH) {
+                            var scrollTop = this.offsetTop + this.offsetHeight + innerH - winH +
+                                categorySpace;
+
+                            if (scrollTop > this.offsetTop) {
+                                scrollTop = this.offsetTop - categorySpace;
+                            }
+
+                            $page.scrollTop(scrollTop);
+                        }
+                    }
+                });
+            });
+        </script>
+</script>

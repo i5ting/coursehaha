@@ -1,0 +1,29 @@
+<div class='course_item'>
+    <div class="course-img">
+        <a href="/course/49" target="_blank">
+            <span class="tags">
+                <span class="tag-serialing"></span>
+            </span>
+            <img src="{{picture}}" alt="{{name}}" class="img-responsive">
+        </a>
+    </div>
+    <div class="course-info">
+        <div class="title">
+            <a class="link-dark" href="/course/{{_id}}" target="_blank">
+                {{name}}
+            </a>
+        </div>
+        <div class="metas clearfix">
+            <span class="comment">
+                <i class="es-icon es-icon-textsms"></i>
+                0
+            </span>
+
+            <span class="course-price-widget">
+                <span class="price">
+                    {{price}}
+                </span>
+            </span>
+        </div>
+    </div>
+</div>

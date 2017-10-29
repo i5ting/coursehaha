@@ -44,4 +44,15 @@ router.get('/static/list', function (req, res, next) {
   })
 });
 
+
+router.get('/courses/:id', function (req, res, next) {
+  var cid = req.params.id
+  Course.getById(cid, function (err, course) {
+    console.log(course)
+    res.render('detail', { 
+      course: course
+    });
+  })
+});
+
 module.exports = router;

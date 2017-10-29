@@ -63,4 +63,19 @@ router.post('/', function (req, res, next) {
   })
 });
 
+/* POST create user */
+router.delete('/:id', function (req, res, next) {
+  Course.deleteById(req.params.id,function(err, course){
+    res.json({
+      data: {
+        // course: course
+      },
+      status: {
+        code: 0,
+        msg: "sucess"
+      }
+    })
+  })
+});
+
 module.exports = router;

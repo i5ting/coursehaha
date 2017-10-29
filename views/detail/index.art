@@ -73,7 +73,7 @@
 
         .buy-btn-group {
             float: right;
-        
+
             margin-top: 10px;
             margin-right: 20px;
             margin-bottom: 10px;
@@ -125,22 +125,24 @@
                 </div>
                 <div class="weui-panel__bd panel_detail">
                     <div class="page__bd course_list">
-    
+
                         <div class="weui-panel__hd price">
-                                <b>课程目标：</b> <p>  {{$data.course.target}} </p>
+                            <b>课程目标：</b>
+                            <p> {{$data.course.target}} </p>
                         </div>
-                        
+
                         <div class="weui-panel__hd price">
-                                <b>目标用户：<b>  <p> {{$data.course.target_user}} </p>
+                            <b>目标用户：</b>
+                            <p> {{$data.course.target_user}} </p>
                         </div>
-                        
+
                         <div class="weui-panel__hd price">
                             ...
                             <br>
                         </div>
                     </div>
                 </div>
-              
+
             </div>
         </div>
         <div class="page__ft">

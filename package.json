@@ -17,7 +17,10 @@
     "mongoosedao": "^1.0.13",
     "morgan": "~1.9.0",
     "mount-routes": "^1.0.8",
-    "serve-favicon": "~2.4.5"
+    "serve-favicon": "~2.4.5",
+    "wechat-api": "^1.25.1",
+    "wechat-oauth": "^1.1.1",
+    "weixin-pay": "1.1.6"
   },
   "devDependencies": {
     "nodemon": "^1.12.1"

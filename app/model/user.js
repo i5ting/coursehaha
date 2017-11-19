@@ -49,11 +49,7 @@ UserSchema = new Schema({
   address       : String, // 地址
   unionid       : String,
   openid: {// from weixin openid
-    type: String,
-    required: true,
-    index: {
-      unique: true
-    }
+    type: String
   },
   nickname      : String,// from weixin 昵称
   sex           : String,// from weixin 性别 0->女 1->男
@@ -119,8 +115,8 @@ UserSchema.statics.find_by_nickname = function(nickname, cb) {
 };
 
 UserSchema.plugin(autoIncrement.plugin, {
-  model: 'XbmId',
-  field: 'xbm_id',
+  model: 'UId',
+  field: 'user_id',
   startAt: 10000,
   incrementBy: 1
 });

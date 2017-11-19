@@ -4,7 +4,7 @@ var check_session = require('../middlewares/check_session_is_expired');
 var OAuth = require('wechat-oauth');
 
 // 读取配置项
-var config      = require('../../config/wechat');
+var config      = require('../config/wechat');
 var app_id      = config.app_id;
 var app_secret  = config.app_secret;
 var domain      = config.domain;

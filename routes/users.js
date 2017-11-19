@@ -10,7 +10,7 @@ var router = express.Router();
 // var $middlewares  = require('mount-middlewares')(__dirname);
 
 // core controller
-var $ = require('../../users_controller')(__dirname);
+var $ = require('../app/controllers/users_controller')
 
 
 // -- custom routes

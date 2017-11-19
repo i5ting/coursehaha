@@ -3,18 +3,18 @@ var router = express.Router();
 
 var $ = require('../../app/controllers/users_controller')
 
-var $middlewares  = require('mount-middlewares')(__dirname);
+// var $middlewares  = require('mount-middlewares')(__dirname);
 
 // route define
-router.get('/', $middlewares.check_api_token, $.api.list);
+router.get('/', $.api.list);
 
-router.post('/', $middlewares.check_api_token, $.api.create);
+router.post('/', $.api.create);
 
-router.get('/:user_id', $middlewares.check_api_token, $.api.show);
+router.get('/:user_id', $.api.show);
 
-router.patch('/:user_id', $middlewares.check_api_token, $.api.update);
+router.patch('/:user_id', $.api.update);
 
-router.delete('/:user_id', $middlewares.check_api_token, $.api.delete);
+router.delete('/:user_id', $.api.delete);
 
 
 module.exports = router;

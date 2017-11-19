@@ -2,7 +2,7 @@
  * Created by sang on 01/06/14.
  */
 
-var User = require('../models/user');
+var User = require('../model/user');
 
 exports.list = function (req, res, next) {
   console.log(req.method + ' /users => list, query: ' + JSON.stringify(req.query));

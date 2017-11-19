@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-var $ = require('mount-controllers')(__dirname).users_controller;
+var $ = require('../../app/controllers/users_controller')
 
 var $middlewares  = require('mount-middlewares')(__dirname);
 

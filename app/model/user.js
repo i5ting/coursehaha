@@ -4,6 +4,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var Promise = require('bluebird');
 var autoIncrement = require('mongoose-auto-increment');
+var MongooseDao = require('mongoosedao')
 
 autoIncrement.initialize(mongoose.connection);
 
@@ -121,9 +122,7 @@ UserSchema.plugin(autoIncrement.plugin, {
   incrementBy: 1
 });
 
-var UserModel = mongoose.model('UserModel', UserSchema);
+var UserModel = mongoose.model('UserModel', UserSchema)
+var userDao = new MongooseDao(UserModel)
 
-Promise.promisifyAll(UserModel);
-Promise.promisifyAll(UserModel.prototype);
-
-module.exports = UserModel;
+module.exports = userDao;

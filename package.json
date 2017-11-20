@@ -13,6 +13,7 @@
     "express": "~4.15.5",
     "express-art-template": "^1.0.0",
     "jade": "~1.11.0",
+    "jsonwebtoken": "^8.1.0",
     "mongoose": "^4.12.4",
     "mongoose-auto-increment": "^5.0.1",
     "mongoosedao": "^1.0.13",

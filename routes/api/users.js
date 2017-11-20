@@ -6,6 +6,8 @@ var $ = require('../../app/controllers/users_controller')
 // var $middlewares  = require('mount-middlewares')(__dirname);
 
 // route define
+router.post('/auth', $.api.auth);
+
 router.get('/', $.api.list);
 
 router.post('/', $.api.create);

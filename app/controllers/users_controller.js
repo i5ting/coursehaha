@@ -24,9 +24,19 @@ exports.api = {
         if (user.password != req.body.password) {
           res.json({ success: false, message: '认证失败，密码错误' });
         } else {
+          console.log("user")
+          console.dir(user)
+
+          var content = {
+            _id: user._id,
+            user_id: user.user_id,
+            username: user.username,
+            password: user.password,
+
+          }
           // 创建token
-          var token = jwt.sign(user, 'app.get(superSecret)', {
-            'expiresInMinutes': 1440 // 设置过期时间
+          var token = jwt.sign(content, 'app.get(superSecret)', {
+            expiresIn: '1h' 
           });
 
           // json格式返回token

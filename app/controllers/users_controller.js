@@ -79,7 +79,7 @@ exports.api = {
   create: function (req, res, next) {
     var user_id = req.api_user._id;
 
-    User.create({ username: req.body.username, password: req.body.password, avatar: req.body.avatar, phone_number: req.body.phone_number, address: req.body.address }, function (err, user) {
+    User.create({ username: req.body.username, email: req.body.email, password: req.body.password, avatar: req.body.avatar, phone_number: req.body.phone_number, address: req.body.address }, function (err, user) {
       if (err) {
         return res.api_error(err);
       }

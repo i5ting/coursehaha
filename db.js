@@ -1,6 +1,7 @@
 var connectionString, db, mongoose, options
 
 mongoose = require('mongoose')
+mongoose.Promise = require('bluebird')
 
 var config = require('./config/mongodb')
 var port = config.port

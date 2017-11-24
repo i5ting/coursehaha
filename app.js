@@ -28,6 +28,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(require('res.api'));
+app.use(require('./check_api_token'));
+
 var mount = require('mount-routes');
 // with path & api dump
 mount(app,  __dirname + '/routes', true);

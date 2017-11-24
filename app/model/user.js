@@ -24,6 +24,9 @@ UserSchema = new Schema({
       unique: true
     }
   },
+  email: {
+    type: String
+  },
   id_card: {
     type: String
   },

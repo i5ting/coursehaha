@@ -84,7 +84,7 @@ exports.api = {
         return res.api_error(err);
       }
 
-      res.json({
+      res.api({
         user: user
       })
     });
